@@ -17,6 +17,15 @@ Simple Rails deployer for VPS and Nginx (or similar reverse proxy server) for Ra
   ```
   "start": "bundle exec puma -e $RAILS_ENV -p $PORT -b unix://./tmp/sockets/puma.sock --pidfile ./tmp/pids/puma.pid -d"
   ```
+- You use bash on the remote server.
+- In `.bashrc` file, following lines must be commented out if present:
+  ```
+  # If not running interactively, don't do anything
+  case $- in
+      *i*) ;;
+        *) return;;
+  esac
+  ```
 
 ## Installation
 
