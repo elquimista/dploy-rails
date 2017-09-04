@@ -8,5 +8,3 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
-
-import "./lib/tasks/deploy.rake"
