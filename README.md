@@ -42,8 +42,7 @@ DEPLOY_PATH=<Rails application path for deployment on the remote server>
 
 This gem will make a new Rails task available. Once you are ready to deploy, just hit the following command in your terminal:
 
-  $ bin/rails deploy
-
+    $ bin/rails deploy
 
 ## Development
 
