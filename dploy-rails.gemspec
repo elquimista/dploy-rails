@@ -35,6 +35,4 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "net-ssh", "~> 4.1.0"
   spec.add_runtime_dependency "colored", "~> 1.2"
-
-  spec.add_dependency "railties", ">= 5.1.0", "< 5.2"
 end
