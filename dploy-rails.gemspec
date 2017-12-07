@@ -6,8 +6,8 @@ require "dploy/rails/version"
 Gem::Specification.new do |spec|
   spec.name          = "dploy-rails"
   spec.version       = Dploy::Rails::VERSION
-  spec.authors       = ["dark.turtle"]
-  spec.email         = ["dark.turtle@protonmail.com"]
+  spec.authors       = ["artificis"]
+  spec.email         = ["artificis@protonmail.ch"]
 
   spec.summary       = %q{Simple Rails deployer for VPS and Nginx}
   spec.description   = %q{Simple Rails deployer for VPS and Nginx (or similar reverse proxy server).}

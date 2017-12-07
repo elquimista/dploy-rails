@@ -5,7 +5,7 @@ Simple Rails deployer for VPS and Nginx (or similar reverse proxy server) for Ra
 ## Prerequisites
 
 `dploy-rails` assumes the following things:
-- Your Rails application is set to run on top of nginx in the remote server. For more details, please read this article here - [How to Setup Rails App with Puma and NGINX](http://swarts.gitlab.io/development/2017/02/03/how-to-setup-rails-app-with-puma-and-nginx.html)
+- Your Rails application is set to run on top of nginx in the remote server. For more details, please read this article here - [How to Setup Rails App with Puma and NGINX](http://artificis.gitlab.io/development/2017/02/03/how-to-setup-rails-app-with-puma-and-nginx.html)
 - Rails application codebase is hosted on certain git repository service and deploy key (SSH-key used for read-only purpose) is added to the repository.
 - You have `build` script inside `package.json` file.  
   E.g.,
