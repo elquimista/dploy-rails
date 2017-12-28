@@ -48,7 +48,6 @@ task :deploy do
   Net::SSH.start(domain, user, keys: [identity_file]) do |ssh|
     WithInPath.new(path, ssh).run do
       pid = exec!(%{cat tmp/pids/puma.pid}).to_i
-      break if pid <= 0
 
       print_step_description "Killing puma server process..."
       print_output_unless_blank exec!(%{kill -9 #{pid}})
