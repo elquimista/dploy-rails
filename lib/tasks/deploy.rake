@@ -50,10 +50,10 @@ task :deploy do
       pid = exec!(%{cat tmp/pids/puma.pid}).to_i
       break if pid <= 0
 
-      print_step_description "Killing process..."
+      print_step_description "Killing puma server process..."
       print_output_unless_blank exec!(%{kill -9 #{pid}})
 
-      print_step_description "Pulling latest update from git..."
+      print_step_description "Pulling latest update from git remote..."
       print_output_unless_blank exec!(%{git pull})
       last_commit = exec!(%{git log -1 --oneline}).strip
 
@@ -63,14 +63,14 @@ task :deploy do
       print_step_description "Running database migration..."
       print_output_unless_blank exec!(%{bin/rails db:migrate})
 
-      print_step_description "Installing yarn packages..."
-      print_output_unless_blank exec!(%{bin/yarn})
+      print_step_description "Running yarn install..."
+      print_output_unless_blank exec!(%{yarn})
 
       print_step_description "Precompiling assets..."
-      print_output_unless_blank exec!(%{bin/yarn build})
+      print_output_unless_blank exec!(%{yarn build})
 
       print_step_description "Starting Ruby on Rails application..."
-      print_output_unless_blank exec!(%{bin/yarn start})
+      print_output_unless_blank exec!(%{yarn start})
 
       print_step_description "Done. Deployed to #{domain} (#{last_commit})"
     end
